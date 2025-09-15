@@ -42,11 +42,26 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
 
-    - name: npm install, build, and test
+    - name: Install dependencies
+      run: npm install
+
+    # This step will only run build if the script is defined in package.json
+    - name: Build (if defined)
       run: |
-        npm install
-        npm run build --if-present
-        npm run test --if-present
+        if npm run | grep -q 'build'; then
+          npm run build
+        else
+          echo "No build script found, skipping build."
+        fi
+
+    # This step will only run test if the script is defined in package.json
+    - name: Test (if defined)
+      run: |
+        if npm run | grep -q 'test'; then
+          npm run test
+        else
+          echo "No test script found, skipping test."
+        fi
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v4
