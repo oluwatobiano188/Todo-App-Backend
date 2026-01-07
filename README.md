@@ -1,2 +1,1 @@
-i containerized  backend using Docker and Docker Compose with PostgreSQL.
-CI pipeline builds and pushes Docker images automatically using GitHub Actions.
+i containerized backend using Docker and Docker Compose with PostgreSQL. CI pipeline builds and pushes Docker images automatically using GitHub Actions.
