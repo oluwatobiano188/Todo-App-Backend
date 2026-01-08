@@ -22,4 +22,4 @@ jobs:
         with:
           context: .
           push: true 
-          tags: oluwatobiano/todo-backend:latest 
+          tags: oluwatobiano/todo-backend:latest
