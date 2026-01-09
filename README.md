@@ -1,1 +1,9 @@
-i containerized backend using Docker and Docker Compose with PostgreSQL. CI pipeline builds and pushes Docker images automatically using GitHub Actions.
+# CI/CD
+This project uses GitHub Actions to:
+- Run tests on every push
+- Build a Docker image
+- Push versioned images to Docker Hub
+
+Images are tagged with:
+- `latest`
+- Git commit SHA
